@@ -6,7 +6,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import dev.yellowhatpro.studyadda.data.remote.NetworkService
+import dev.yellowhatpro.studyadda.data.source.remote.StudyAddaDataSource
 import dev.yellowhatpro.studyadda.internet.ConnectivityObserver
 import dev.yellowhatpro.studyadda.internet.NetworkConnectivityObserver
 import retrofit2.Retrofit
@@ -20,7 +20,7 @@ object NetworkModule {
     fun providesAPIService() = Retrofit.Builder()
         .baseUrl("https://jsonplaceholder.typicode.com/")
         .build()
-        .create(NetworkService::class.java)
+        .create(StudyAddaDataSource::class.java)
 
     @Provides
     @Singleton
